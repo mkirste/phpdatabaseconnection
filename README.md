@@ -1,5 +1,5 @@
 # phpdatabaseconnection
-Simple PHP Database Connection Class for MySQL
+Simple PHP Database Connection und Database Gateway Classes for MySQL
 
 # Documentation
 
