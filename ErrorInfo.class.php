@@ -5,17 +5,17 @@ class ErrorInfo {
     public $message; //string or array
     public $data;
 
-    function __construct($type, $message = null, $data = null) {
+    public function __construct($type, $message = null, $data = null) {
         $this->type = $type;
         $this->message = $message;
         $this->data = $data;
     }
 
-    function toArray() {
+    public function toArray() {
         return ['type' => $this->type, 'message' => $this->message, 'data' => $this->data];
     }
 
-    function getErrorMessage() {
+    public function getErrorMessage() {
         $result = $this->type;
 
         if ($this->message !== null) {
@@ -36,5 +36,9 @@ class ErrorInfo {
         }
 
         return $result;
+    }
+
+    public static function isError($variable) {
+        return $variable instanceof ErrorInfo;
     }
 }
